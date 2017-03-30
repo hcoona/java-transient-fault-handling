@@ -2,5 +2,17 @@
 <FindBugsFilter xmlns="http://findbugs.sourceforge.net/filter/3.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://findbugs.sourceforge.net/filter/3.0.0 https://raw.githubusercontent.com/findbugsproject/findbugs/3.0.1/findbugs/etc/findbugsfilter.xsd">
-  <!-- Suppress FindBugs Warnings & Errors Here -->
+  <!-- False check -->
+  <Match>
+    <Class name="io.github.hcoona.utils.AsyncExecution" />
+    <Method name="run" />
+    <Bug pattern="NP_NONNULL_PARAM_VIOLATION" />
+  </Match>
+
+  <!-- Logically always fulfilled -->
+  <Match>
+    <Class name="io.github.hcoona.utils.RetryLimitExceededException" />
+    <Method name="getInnerException" />
+    <Bug pattern="BC_UNCONFIRMED_CAST_OF_RETURN_VALUE" />
+  </Match>
 </FindBugsFilter>

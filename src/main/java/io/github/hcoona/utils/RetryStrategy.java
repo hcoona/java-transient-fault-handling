@@ -19,16 +19,12 @@ public abstract class RetryStrategy {
   private static final RetryStrategy defaultExponential;
 
   static {
-    try {
-      noRetry = new FixedInterval(0, DefaultRetryInterval);
-      defaultFixed = new FixedInterval(DefaultClientRetryCount, DefaultRetryInterval);
-      defaultProgressive = new Incremental(
-        DefaultClientRetryCount, DefaultRetryInterval, DefaultRetryIncrement);
-      defaultExponential = new ExponentialBackoff(
-        DefaultClientRetryCount, DefaultMinBackoff, DefaultMaxBackoff, DefaultClientBackoff);
-    } catch (Exception e) {
-      throw new RuntimeException("Unable to initialize RetryStrategy default static fields.", e);
-    }
+    noRetry = new FixedInterval(0, DefaultRetryInterval);
+    defaultFixed = new FixedInterval(DefaultClientRetryCount, DefaultRetryInterval);
+    defaultProgressive = new Incremental(
+      DefaultClientRetryCount, DefaultRetryInterval, DefaultRetryIncrement);
+    defaultExponential = new ExponentialBackoff(
+      DefaultClientRetryCount, DefaultMinBackoff, DefaultMaxBackoff, DefaultClientBackoff);
   }
 
   /**
@@ -43,8 +39,8 @@ public abstract class RetryStrategy {
    * {@link #DefaultClientRetryCount} and {@link #DefaultRetryInterval} parameters.
    * The default retry policy treats all caught exceptions as transient errors.
    *
-   * @return a default policy that implements a fixed retry interval configured with the
-   *     {@link #DefaultClientRetryCount} and {@link #DefaultRetryInterval} parameters.
+   * @return a default policy that implements a fixed retry interval configured with the {@link
+   *     #DefaultClientRetryCount} and {@link #DefaultRetryInterval} parameters.
    */
   public static RetryStrategy getDefaultFixed() {
     return defaultFixed;
@@ -57,8 +53,8 @@ public abstract class RetryStrategy {
    * The default retry policy treats all caught exceptions as transient errors.
    *
    * @return a default policy that implements a progressive retry interval configured with the
-   *     {@link #DefaultClientRetryCount}, {@link #DefaultRetryInterval}, and
-   *     {@link #DefaultRetryIncrement} parameters.
+   *     {@link #DefaultClientRetryCount}, {@link #DefaultRetryInterval}, and {@link
+   *     #DefaultRetryIncrement} parameters.
    */
   public static RetryStrategy getDefaultProgressive() {
     return defaultProgressive;
