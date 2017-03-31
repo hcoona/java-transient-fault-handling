@@ -1,4 +1,4 @@
-package io.github.hcoona.utils;
+package io.github.hcoona.retry;
 
 /**
  * Defines an interface that must be implemented by custom components responsible for detecting

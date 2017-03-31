@@ -1,4 +1,4 @@
-package io.github.hcoona.utils;
+package io.github.hcoona.retry;
 
 /**
  * The special type of exception that provides managed exit from a retry loop. The user code can use

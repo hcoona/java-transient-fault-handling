@@ -1,4 +1,4 @@
-package io.github.hcoona.utils;
+package io.github.hcoona.retry;
 
 import java.time.Duration;
 import java.util.concurrent.Callable;

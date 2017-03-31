@@ -1,4 +1,4 @@
-package io.github.hcoona.utils;
+package io.github.hcoona.retry;
 
 import com.google.common.base.Preconditions;
 

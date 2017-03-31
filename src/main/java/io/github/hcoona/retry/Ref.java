@@ -1,4 +1,4 @@
-package io.github.hcoona.utils;
+package io.github.hcoona.retry;
 
 public class Ref<T> {
   private T value;

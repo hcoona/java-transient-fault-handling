@@ -4,14 +4,14 @@
     xsi:schemaLocation="http://findbugs.sourceforge.net/filter/3.0.0 https://raw.githubusercontent.com/findbugsproject/findbugs/3.0.1/findbugs/etc/findbugsfilter.xsd">
   <!-- False check -->
   <Match>
-    <Class name="io.github.hcoona.utils.AsyncExecution" />
+    <Class name="io.github.hcoona.retry.AsyncExecution" />
     <Method name="run" />
     <Bug pattern="NP_NONNULL_PARAM_VIOLATION" />
   </Match>
 
   <!-- Logically always fulfilled -->
   <Match>
-    <Class name="io.github.hcoona.utils.RetryLimitExceededException" />
+    <Class name="io.github.hcoona.retry.RetryLimitExceededException" />
     <Method name="getInnerException" />
     <Bug pattern="BC_UNCONFIRMED_CAST_OF_RETURN_VALUE" />
   </Match>
