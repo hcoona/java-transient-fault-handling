@@ -1,11 +1,14 @@
 package io.github.hcoona.retry;
 
+import com.google.common.annotations.VisibleForTesting;
+
 import java.time.Duration;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+@VisibleForTesting
 class AsyncExecution<T> implements Runnable {
   private final Callable<T> command;
   private final ScheduledExecutorService executor;

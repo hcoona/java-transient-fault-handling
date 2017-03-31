@@ -1,5 +1,6 @@
 package io.github.hcoona.retry;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 
 import java.time.Duration;
@@ -330,7 +331,8 @@ public class RetryPolicy {
   /**
    * Implements a strategy that ignores any transient errors.
    */
-  private static final class TransientErrorIgnoreStrategy
+  @VisibleForTesting
+  static final class TransientErrorIgnoreStrategy
       implements ITransientErrorDetectionStrategy {
     /**
      * Always returns false.
@@ -348,7 +350,8 @@ public class RetryPolicy {
   /**
    * Implements a strategy that treats all exceptions as transient errors.
    */
-  private static final class TransientErrorCatchAllStrategy
+  @VisibleForTesting
+  static final class TransientErrorCatchAllStrategy
       implements ITransientErrorDetectionStrategy {
     /**
      * Always returns true.
