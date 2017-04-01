@@ -48,6 +48,8 @@ public class RetryManager {
    * You can update the default retry manager by calling the
    * {@link RetryManager#setDefault(RetryManager, boolean)}
    * method.
+   *
+   * @return The default {@link RetryManager}
    */
   public static RetryManager getInstance() throws IllegalStateException {
     RetryManager instance = defaultRetryManager;
@@ -121,12 +123,19 @@ public class RetryManager {
   }
 
   /**
-   * Gets or sets the default retry strategy name.
+   * Get the default retry strategy name.
+   *
+   * @return the default retry strategy name.
    */
   public String getDefaultRetryStrategyName() {
     return this.defaultRetryStrategyName;
   }
 
+  /**
+   * Set the default retry strategy name.
+   *
+   * @param value the default retry strategy name
+   */
   public void setDefaultRetryStrategyName(String value) {
     if (StringUtils.isNotBlank(value)) {
       RetryStrategy strategy = this.retryStrategies.get(value);
@@ -143,6 +152,8 @@ public class RetryManager {
    * ITransientErrorDetectionStrategy} interface that is responsible for detecting transient
    * conditions.
    *
+   * @param errorDetectionStrategy
+   *     The error detection strategy.
    * @return A new retry policy with the specified error detection strategy and the default retry
    *     strategy defined in the configuration.
    */
@@ -156,6 +167,8 @@ public class RetryManager {
    * {@link ITransientErrorDetectionStrategy}
    * interface that is responsible for detecting transient conditions.
    *
+   * @param errorDetectionStrategy
+   *     The error detection strategy.
    * @param retryStrategyName
    *     The retry strategy name, as defined in the configuration.
    * @return A new retry policy with the specified error detection strategy and the default retry
