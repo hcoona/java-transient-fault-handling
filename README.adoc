@@ -1,3 +1,5 @@
 = Transient Fault Handling =
 
 This is a direct Java port for Microsoft Transient Fault Handling.
+
+**Moved to link:https://github.com/hcoona/one/tree/master/java-transient-fault-handling[https://github.com/hcoona/one/tree/master/java-transient-fault-handling]**
